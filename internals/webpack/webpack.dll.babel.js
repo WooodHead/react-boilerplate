@@ -7,6 +7,7 @@
  * to warrant building them from scratch every time we use
  * the webpack process.
  */
+/* eslint prefer-destructuring: 0 */
 
 const { join } = require('path');
 const defaults = require('lodash/defaultsDeep');

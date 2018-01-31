@@ -19,7 +19,7 @@ import Wrapper from './Wrapper';
 
 export class RepoListItem extends React.PureComponent {
   render() {
-    const item = this.props.item;
+    const { item } = this.props;
     let nameprefix = '';
 
     // If the repository is owned by a different person than we got the data for

@@ -1,6 +1,7 @@
 /**
  * DEVELOPMENT WEBPACK CONFIGURATION
  */
+/* eslint prefer-destructuring: 0 */
 
 const path = require('path');
 const fs = require('fs');

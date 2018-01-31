@@ -1,6 +1,8 @@
 /**
  * Language Generator
  */
+/* eslint prefer-destructuring: 0 */
+
 const fs = require('fs');
 const exec = require('child_process').exec;
 
