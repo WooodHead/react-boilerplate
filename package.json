@@ -332,7 +332,7 @@
     "husky": "0.14.3",
     "image-webpack-loader": "4.0.0",
     "imports-loader": "0.7.1",
-    "jest-cli": "20.0.4",
+    "jest-cli": "22.1.4",
     "lint-staged": "6.1.0",
     "ngrok": "2.2.25",
     "node-plop": "0.9.0",
