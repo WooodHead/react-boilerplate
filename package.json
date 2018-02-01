@@ -1,6 +1,6 @@
 {
   "name": "avvo-react-boilerplate",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
   "repository": {
     "type": "git",
@@ -84,7 +84,7 @@
     "intl": "1.2.5",
     "invariant": "2.2.2",
     "ip": "1.1.5",
-    "lodash": "4.17.4",
+    "lodash": "^4.17.4",
     "minimist": "1.2.0",
     "prop-types": "15.6.0",
     "react": "16.2.0",
