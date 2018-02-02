@@ -34,6 +34,7 @@ import reducer from './reducer';
 import saga from './saga';
 
 export class HomePage extends React.PureComponent {
+  // eslint-disable-line react/prefer-stateless-function
   /**
    * when initial state username is not null, submit the form to load repos
    */

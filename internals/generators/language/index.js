@@ -1,10 +1,10 @@
 /**
  * Language Generator
  */
-/* eslint prefer-destructuring: 0 */
-
+/* eslint-disable */
 const fs = require('fs');
 const exec = require('child_process').exec;
+/* eslint-enable */
 
 function languageIsSupported(language) {
   try {
@@ -89,10 +89,6 @@ module.exports = {
         process.stdout.write(result);
       });
       return 'modify translation messages';
-    });
-    actions.push({
-      type: 'prettier',
-      path: ['../../app/app.js', '../../app/i18n.js']
     });
 
     return actions;
