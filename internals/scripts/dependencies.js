@@ -10,10 +10,10 @@ const fs = require('fs');
 const exists = fs.existsSync;
 const writeFile = fs.writeFileSync;
 
-const defaults = require('lodash/defaultsDeep');
+const mergeDeepLeft = require('ramda/src/mergeDeepLeft');
 const pkg = require(path.join(process.cwd(), 'package.json'));
 const config = require('../config');
-const dllConfig = defaults(pkg.dllPlugin, config.dllPlugin.defaults);
+const dllConfig = mergeDeepLeft(pkg.dllPlugin, config.dllPlugin.defaults);
 const outputPath = path.join(process.cwd(), dllConfig.path);
 const dllManifestPath = path.join(outputPath, 'package.json');
 
@@ -32,7 +32,7 @@ if (!exists(dllManifestPath)) {
   writeFile(
     dllManifestPath,
     JSON.stringify(
-      defaults({
+      mergeDeepLeft({
         name: 'react-boilerplate-dlls',
         private: true,
         author: pkg.author,

@@ -1,8 +1,7 @@
-import isEmpty from 'lodash/isEmpty';
-import isFunction from 'lodash/isFunction';
-import isString from 'lodash/isString';
+import isEmpty from 'ramda/src/isEmpty';
+import is from 'ramda/src/is';
+import where from 'ramda/src/where';
 import invariant from 'invariant';
-import conformsTo from 'lodash/conformsTo';
 
 import checkStore from './checkStore';
 import { DAEMON, ONCE_TILL_UNMOUNT, RESTART_ON_REMOUNT } from './constants';
@@ -11,17 +10,17 @@ const allowedModes = [RESTART_ON_REMOUNT, DAEMON, ONCE_TILL_UNMOUNT];
 
 const checkKey = key =>
   invariant(
-    isString(key) && !isEmpty(key),
+    is(String, key) && !isEmpty(key),
     '(app/utils...) injectSaga: Expected `key` to be a non empty string'
   );
 
 const checkDescriptor = descriptor => {
-  const shape = {
-    saga: isFunction,
-    mode: mode => isString(mode) && allowedModes.includes(mode)
-  };
+  const shape = where({
+    saga: is(Function),
+    mode: mode => is(String, mode) && allowedModes.includes(mode)
+  });
   invariant(
-    conformsTo(descriptor, shape),
+    shape(descriptor),
     '(app/utils...) injectSaga: Expected a valid saga descriptor'
   );
 };

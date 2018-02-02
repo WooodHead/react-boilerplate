@@ -1,8 +1,8 @@
 /* eslint prefer-destructuring: 0 */
 
 const resolve = require('path').resolve;
-const pullAll = require('lodash/pullAll');
-const uniq = require('lodash/uniq');
+const without = require('ramda/src/without');
+const uniq = require('ramda/src/uniq');
 
 const ReactBoilerplate = {
   // This refers to the react-boilerplate version this project is based on.
@@ -33,10 +33,10 @@ const ReactBoilerplate = {
       ],
 
       /**
-       * Specify any additional dependencies here. We include core-js and lodash
+       * Specify any additional dependencies here. We include core-js and ramda
        * since a lot of our dependencies depend on them and they get picked up by webpack.
        */
-      include: ['core-js', 'eventsource-polyfill', 'babel-polyfill', 'lodash'],
+      include: ['core-js', 'eventsource-polyfill', 'babel-polyfill', 'ramda'],
 
       // The path where the DLL manifest and bundle will get built
       path: resolve('../node_modules/react-boilerplate-dlls')
@@ -51,7 +51,7 @@ const ReactBoilerplate = {
       const includeDependencies = uniq(dependencyNames.concat(include));
 
       return {
-        reactBoilerplateDeps: pullAll(includeDependencies, exclude)
+        reactBoilerplateDeps: without(exclude, includeDependencies)
       };
     }
   }

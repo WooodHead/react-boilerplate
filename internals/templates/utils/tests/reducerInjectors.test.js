@@ -3,7 +3,7 @@
  */
 
 import { memoryHistory } from 'react-router-dom';
-import identity from 'lodash/identity';
+import identity from 'ramda/src/identity';
 
 import configureStore from '../../configureStore';
 

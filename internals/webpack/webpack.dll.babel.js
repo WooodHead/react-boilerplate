@@ -10,7 +10,7 @@
 /* eslint prefer-destructuring: 0 */
 
 const { join } = require('path');
-const defaults = require('lodash/defaultsDeep');
+const merge = require('ramda/src/merge');
 const webpack = require('webpack');
 const pkg = require(join(process.cwd(), 'package.json'));
 const dllPlugin = require('../config').dllPlugin;
@@ -19,7 +19,7 @@ if (!pkg.dllPlugin) {
   process.exit(0);
 }
 
-const dllConfig = defaults(pkg.dllPlugin, dllPlugin.defaults);
+const dllConfig = merge(dllPlugin.defaults, pkg.dllPlugin);
 const outputPath = join(process.cwd(), dllConfig.path);
 
 module.exports = require('./webpack.base.babel')({
