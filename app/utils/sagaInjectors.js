@@ -53,7 +53,6 @@ export function injectSagaFactory(store, isValid) {
       !hasSaga ||
       (hasSaga && mode !== DAEMON && mode !== ONCE_TILL_UNMOUNT)
     ) {
-      // eslint-disable-next-line no-param-reassign
       store.injectedSagas[key] = {
         ...newDescriptor,
         task: store.runSaga(saga, args)
@@ -75,7 +74,7 @@ export function ejectSagaFactory(store, isValid) {
         // Clean up in production; in development we need `descriptor.saga` for hot reloading
         if (process.env.NODE_ENV === 'production') {
           // Need some value to be able to detect `ONCE_TILL_UNMOUNT` sagas in `injectSaga`
-          store.injectedSagas[key] = 'done'; // eslint-disable-line no-param-reassign
+          store.injectedSagas[key] = 'done';
         }
       }
     }

@@ -2,8 +2,6 @@
  * Component Generator
  */
 
-/* eslint strict: ["off"] */
-
 'use strict';
 
 const componentExists = require('../utils/componentExists');

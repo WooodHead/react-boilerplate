@@ -18,10 +18,11 @@ export function injectReducerFactory(store, isValid) {
     if (
       Reflect.has(store.injectedReducers, key) &&
       store.injectedReducers[key] === reducer
-    )
+    ) {
       return;
+    }
 
-    store.injectedReducers[key] = reducer; // eslint-disable-line no-param-reassign
+    store.injectedReducers[key] = reducer;
     store.replaceReducer(createReducer(store.injectedReducers));
   };
 }

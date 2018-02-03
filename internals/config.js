@@ -1,5 +1,3 @@
-/* eslint prefer-destructuring: 0 */
-
 const resolve = require('path').resolve;
 const without = require('ramda/src/without');
 const uniq = require('ramda/src/uniq');

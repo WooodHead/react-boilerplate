@@ -5,7 +5,7 @@
  */
 
 import { CHANGE_LOCALE } from './constants';
-import { DEFAULT_LOCALE } from '../App/constants'; // eslint-disable-line
+import { DEFAULT_LOCALE } from '../App/constants';
 
 const initialState = {
   locale: DEFAULT_LOCALE

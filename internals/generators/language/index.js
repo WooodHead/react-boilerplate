@@ -1,10 +1,9 @@
 /**
  * Language Generator
  */
-/* eslint-disable */
+
 const fs = require('fs');
 const exec = require('child_process').exec;
-/* eslint-enable */
 
 function languageIsSupported(language) {
   try {

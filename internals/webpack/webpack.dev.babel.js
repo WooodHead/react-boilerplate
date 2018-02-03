@@ -1,7 +1,6 @@
 /**
  * DEVELOPMENT WEBPACK CONFIGURATION
  */
-/* eslint prefer-destructuring: 0 */
 
 const path = require('path');
 const fs = require('fs');
@@ -53,7 +52,7 @@ module.exports = require('./webpack.base.babel')({
   },
 
   // Add development plugins
-  plugins: dependencyHandlers().concat(plugins), // eslint-disable-line no-use-before-define
+  plugins: dependencyHandlers().concat(plugins),
 
   // Emit a source map for easier debugging
   // See https://webpack.js.org/configuration/devtool/#devtool
@@ -113,7 +112,7 @@ function dependencyHandlers() {
     return [
       new webpack.DllReferencePlugin({
         context: process.cwd(),
-        manifest: require(manifestPath) // eslint-disable-line global-require
+        manifest: require(manifestPath)
       })
     ];
   }
@@ -140,7 +139,7 @@ function dependencyHandlers() {
 
     return new webpack.DllReferencePlugin({
       context: process.cwd(),
-      manifest: require(manifestPath) // eslint-disable-line global-require
+      manifest: require(manifestPath)
     });
   });
 }

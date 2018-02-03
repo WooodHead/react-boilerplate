@@ -7,7 +7,6 @@
  * to warrant building them from scratch every time we use
  * the webpack process.
  */
-/* eslint prefer-destructuring: 0 */
 
 const { join } = require('path');
 const merge = require('ramda/src/merge');

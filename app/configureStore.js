@@ -16,14 +16,13 @@ export default function configureStore(initialState = {}, history) {
   const middlewares = [sagaMiddleware, routerMiddleware(history)];
 
   if (process.env.NODE_ENV !== 'production') {
-    const freeze = require('redux-freeze'); // eslint-disable-line global-require
+    const freeze = require('redux-freeze');
     middlewares.push(freeze);
   }
 
   const enhancers = [applyMiddleware(...middlewares)];
 
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
-  /* eslint-disable */
   const composeEnhancers =
     process.env.NODE_ENV !== 'production' &&
     typeof window === 'object' &&
@@ -34,7 +33,6 @@ export default function configureStore(initialState = {}, history) {
           shouldHotReload: false
         })
       : compose;
-  /* eslint-enable */
 
   const store = createStore(
     createReducer(),

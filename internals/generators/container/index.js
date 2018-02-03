@@ -67,7 +67,7 @@ module.exports = {
   ],
   actions: data => {
     // Generate index.js and index.test.js
-    var componentTemplate; // eslint-disable-line no-var
+    var componentTemplate;
 
     switch (data.type) {
       case 'Stateless Function': {
